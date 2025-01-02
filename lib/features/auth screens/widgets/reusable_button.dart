@@ -12,7 +12,7 @@ class ReusableButton extends StatelessWidget {
       onTap: () {
         
         // isSignup? Navigate to log in and display Snackbar saying "account created"
-        // Else log the user in and keep them logged in till they log out
+        // Else log the user in and keep them logged in till they log out 
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
