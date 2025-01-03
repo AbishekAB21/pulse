@@ -1,26 +1,30 @@
+import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:pulse/core/utils/fontstyles/fontstyles.dart';
-import 'package:pulse/features/auth%20screens/widgets/reusable_button.dart';
-import 'package:pulse/features/auth%20screens/widgets/reusable_textfield.dart';
-import 'package:pulse/features/auth%20screens/widgets/social-sign-in-button.dart';
+import 'package:pulse/features/authentication/widgets/reusable_button.dart';
+import 'package:pulse/features/authentication/widgets/reusable_textfield.dart';
+import 'package:pulse/features/authentication/widgets/social-sign-in-button.dart';
 
 class AuthBox extends StatelessWidget {
+  final TextEditingController email;
+  final TextEditingController password;
   void Function()? navigate;
-  String navgationText1;
-  String navgationText2;
-  bool isSignUp;
+  final String navgationText1;
+  final String navgationText2;
+  final bool isSignUp;
 
   AuthBox({
     super.key,
+    required this.email,
+    required this.password,
     required this.navgationText1,
     required this.navgationText2,
     required this.navigate,
     required this.isSignUp,
   });
 
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +55,7 @@ class AuthBox extends StatelessWidget {
                   children: [
                     ReusableTextField(
                       hinttext: "Email",
-                      cntrlr: _emailController,
+                      cntrlr: email,
                       isObscure: false,
                     ),
                     SizedBox(
@@ -59,7 +63,7 @@ class AuthBox extends StatelessWidget {
                     ),
                     ReusableTextField(
                       hinttext: "Password",
-                      cntrlr: _passwordController,
+                      cntrlr: password,
                       isObscure: true,
                     ),
                     SizedBox(
@@ -68,6 +72,8 @@ class AuthBox extends StatelessWidget {
                     ReusableButton(
                       buttonText: isSignUp ? "Sign up" : "Continue",
                       isSignup: isSignUp,
+                      email: email.text,
+                      password: password.text,
                     ),
                     SizedBox(
                       height: 10,

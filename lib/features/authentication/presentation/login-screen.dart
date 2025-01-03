@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:pulse/core/utils/fontstyles/fontstyles.dart';
-import 'package:pulse/features/auth%20screens/presentation/sign-up.dart';
-import 'package:pulse/features/auth%20screens/widgets/auth-box.dart';
+import 'package:pulse/features/authentication/presentation/sign-up.dart';
+import 'package:pulse/features/authentication/widgets/auth-box.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    TextEditingController _emailController = TextEditingController();
+    TextEditingController _passwordController = TextEditingController();
     return Scaffold(
         body: Stack(
       children: [
@@ -28,6 +31,8 @@ class LoginScreen extends StatelessWidget {
             right: 10,
             child: AuthBox(
               isSignUp: false,
+              email: _emailController,
+              password: _passwordController,
               navgationText1: "Don't have an account? ",
               navgationText2: "Sign up",
               navigate: () => Navigator.push(
