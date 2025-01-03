@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pulse/core/utils/fontstyles/fontstyles.dart';
-import 'package:pulse/features/auth%20screens/sign-up/sign-up.dart';
+import 'package:pulse/features/auth%20screens/presentation/sign-up.dart';
 import 'package:pulse/features/auth%20screens/widgets/auth-box.dart';
 
 class LoginScreen extends StatelessWidget {

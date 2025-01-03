@@ -3,7 +3,13 @@ import 'package:pulse/core/utils/fontstyles/fontstyles.dart';
 
 class ReusableTextField extends StatelessWidget {
   String hinttext;
-  ReusableTextField({super.key, required this.hinttext});
+  bool isObscure;
+  TextEditingController cntrlr;
+  ReusableTextField(
+      {super.key,
+      required this.hinttext,
+      required this.cntrlr,
+      required this.isObscure});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +21,8 @@ class ReusableTextField extends StatelessWidget {
           color: Theme.of(context).colorScheme.secondary.withOpacity(0.8),
           borderRadius: BorderRadius.circular(10)),
       child: TextFormField(
+        style: TextStyle(color: Theme.of(context).colorScheme.primary),
+        obscureText: isObscure,
         decoration: InputDecoration(
             enabledBorder: UnderlineInputBorder(borderSide: BorderSide.none),
             focusedBorder: UnderlineInputBorder(borderSide: BorderSide.none),

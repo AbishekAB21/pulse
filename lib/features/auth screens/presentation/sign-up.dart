@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pulse/features/auth%20screens/log-in/login-screen.dart';
+import 'package:pulse/features/auth%20screens/presentation/login-screen.dart';
 import 'package:pulse/features/auth%20screens/widgets/auth-box.dart';
 
 class SignUpScreen extends StatelessWidget {

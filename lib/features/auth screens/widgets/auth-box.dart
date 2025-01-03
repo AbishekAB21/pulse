@@ -19,6 +19,9 @@ class AuthBox extends StatelessWidget {
     required this.isSignUp,
   });
 
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,11 +49,19 @@ class AuthBox extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    ReusableTextField(hinttext: "Email"),
+                    ReusableTextField(
+                      hinttext: "Email",
+                      cntrlr: _emailController,
+                      isObscure: false,
+                    ),
                     SizedBox(
                       height: 10,
                     ),
-                    ReusableTextField(hinttext: "Password"),
+                    ReusableTextField(
+                      hinttext: "Password",
+                      cntrlr: _passwordController,
+                      isObscure: true,
+                    ),
                     SizedBox(
                       height: 20,
                     ),
