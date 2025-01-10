@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pulse/core/reusable_widgets/snackbar.dart';
 import 'package:pulse/features/authentication/db/auth_service.dart';
 import 'package:pulse/features/authentication/presentation/login-screen.dart';
 import 'package:pulse/features/home/presentation/pages/home.dart';
@@ -17,16 +18,12 @@ class AuthProvider extends ChangeNotifier {
             builder: (context) => HomeScreen(),
           ));
       // SnackBar
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text("Logged In!")));
+      ShowSnackbar().showSnackBar("Logged in successfully!", Colors.green, context);
     } catch (e) {
       // Snackbar
-
-      // the controller value is not getting to the auth service
-      // Use the snackbar as ref
-
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text("error : $e")));
+      ShowSnackbar()
+          .showSnackBar("Error loggin in : $e", Colors.green, context);
+      ;
     }
   }
 
@@ -35,8 +32,13 @@ class AuthProvider extends ChangeNotifier {
     try {
       await authService.signUpWithEmailPassword(email, password);
       // Snackbar
+      Navigator.pop(context);
+      ShowSnackbar().showSnackBar(
+          "Account Created! Please log in to continue", Colors.green, context);
     } catch (e) {
       // Snackbar
+      ShowSnackbar()
+          .showSnackBar("Error creating account : $e", Colors.red, context);
     }
   }
 
@@ -49,6 +51,8 @@ class AuthProvider extends ChangeNotifier {
           MaterialPageRoute(
             builder: (context) => LoginScreen(),
           ));
+       ShowSnackbar()
+          .showSnackBar("Logged out successfully!", Colors.grey.shade600, context);
     } catch (e) {}
   }
 }

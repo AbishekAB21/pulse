@@ -33,6 +33,16 @@ class Fontstyles {
     );
   }
 
+// SnackBar Text
+  static TextStyle SnackBarTextStyle(BuildContext context) {
+    return TextStyle(
+      fontFamily: 'Merriweather Sans',
+      fontSize: 12,
+      fontWeight: FontWeight.bold,
+      color: Colors.white
+    );
+  }
+
 // Content Styles
 
   static TextStyle Headline1(BuildContext context) {
