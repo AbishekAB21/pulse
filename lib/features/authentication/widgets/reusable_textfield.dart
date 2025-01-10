@@ -21,6 +21,7 @@ class ReusableTextField extends StatelessWidget {
           color: Theme.of(context).colorScheme.secondary.withOpacity(0.8),
           borderRadius: BorderRadius.circular(10)),
       child: TextFormField(
+        controller: cntrlr,
         style: TextStyle(color: Theme.of(context).colorScheme.primary),
         obscureText: isObscure,
         decoration: InputDecoration(

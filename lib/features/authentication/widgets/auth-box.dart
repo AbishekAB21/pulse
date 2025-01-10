@@ -24,10 +24,13 @@ class AuthBox extends StatelessWidget {
     required this.isSignUp,
   });
 
-  
+  // final  TextEditingController email = TextEditingController();
+  // final TextEditingController password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+
+   
     return Container(
       child: Column(
         children: [
@@ -72,8 +75,8 @@ class AuthBox extends StatelessWidget {
                     ReusableButton(
                       buttonText: isSignUp ? "Sign up" : "Continue",
                       isSignup: isSignUp,
-                      email: email.text,
-                      password: password.text,
+                      email: email,
+                      password: password,
                     ),
                     SizedBox(
                       height: 10,

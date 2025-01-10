@@ -4,13 +4,16 @@ import 'package:pulse/features/authentication/presentation/sign-up.dart';
 import 'package:pulse/features/authentication/widgets/auth-box.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+   LoginScreen({super.key});
+
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
 
-    TextEditingController _emailController = TextEditingController();
-    TextEditingController _passwordController = TextEditingController();
+    
+
     return Scaffold(
         body: Stack(
       children: [

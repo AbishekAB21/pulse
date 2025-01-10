@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:pulse/core/utils/fontstyles/fontstyles.dart';
+import 'package:pulse/features/authentication/provider/authentication_provider.dart';
 import 'package:pulse/features/home/presentation/widgets/home-news-builder.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -7,6 +9,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authProvider = Provider.of<AuthProvider>(context);
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: Container(
@@ -16,9 +19,18 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: [
               // heading
-              Image.asset(
-                "assets/logo.png",
-                width: 50,
+              Row(
+                children: [
+                  Image.asset(
+                    "assets/logo.png",
+                    width: 50,
+                  ),
+                  IconButton(onPressed: () {
+                    authProvider.SignOut(context);
+                  },
+                  icon: Icon(Icons.logout)
+                  ,)
+                ],
               ),
 
               SizedBox(
