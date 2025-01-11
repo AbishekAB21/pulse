@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pulse/core/utils/theme/dark-theme.dart';
-import 'package:pulse/core/utils/theme/light-theme.dart';
-import 'package:pulse/features/authentication/presentation/login-screen.dart';
 import 'package:pulse/features/authentication/provider/authentication_provider.dart';
 import 'package:pulse/features/splash/presentation/pages/splash-screen.dart';
 import 'package:pulse/features/splash/provider/splash-screen-provider.dart';
@@ -37,7 +35,7 @@ class MyApp extends StatelessWidget {
       theme: darkTheme,
       darkTheme: darkTheme,
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: SplashScreen(),
     );
   }
 }

@@ -36,11 +36,10 @@ class Fontstyles {
 // SnackBar Text
   static TextStyle SnackBarTextStyle(BuildContext context) {
     return TextStyle(
-      fontFamily: 'Merriweather Sans',
-      fontSize: 12,
-      fontWeight: FontWeight.bold,
-      color: Colors.white
-    );
+        fontFamily: 'Merriweather Sans',
+        fontSize: 12,
+        fontWeight: FontWeight.bold,
+        color: Colors.white);
   }
 
 // Content Styles
@@ -49,6 +48,15 @@ class Fontstyles {
     return TextStyle(
       fontFamily: 'Merriweather Sans',
       fontSize: 25,
+      color: Theme.of(context).colorScheme.inversePrimary,
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle Headline2(BuildContext context) {
+    return TextStyle(
+      fontFamily: 'Merriweather Sans',
+      fontSize: 20,
       color: Theme.of(context).colorScheme.inversePrimary,
       fontWeight: FontWeight.w600,
     );

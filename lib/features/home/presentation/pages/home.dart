@@ -1,55 +1,58 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:pulse/core/utils/fontstyles/fontstyles.dart';
-import 'package:pulse/features/authentication/provider/authentication_provider.dart';
-import 'package:pulse/features/home/presentation/widgets/home-news-builder.dart';
+import 'package:pulse/features/home/presentation/widgets/profile_button.dart';
+import 'package:pulse/features/home/presentation/widgets/search_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final authProvider = Provider.of<AuthProvider>(context);
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
-      body: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          margin: EdgeInsets.symmetric(vertical: 70, horizontal: 20),
-          child: Column(
-            children: [
-              // heading
-              // reffer the dribble designs 
-              Row(
+      appBar: AppBar(
+        leading: DrawerButton(/* Drawrer refraction */),
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        actions: [
+          SearchButton(),
+          SizedBox(
+            width: 10,
+          ),
+          ProfileButton(),
+          SizedBox(
+            width: 10,
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.asset(
-                    "assets/logo.png",
-                    width: 50,
+                  Text(
+                    "Breaking News",
+                    style: Fontstyles.Headline2(context),
                   ),
-                  IconButton(onPressed: () {
-                    authProvider.SignOut(context);
-                  },
-                  icon: Icon(Icons.logout)
-                  ,)
+                  IconButton(
+                      onPressed: () {
+                        // Makes Sorting menu below visible (All, Sports, Business, Politics etc)
+                      },
+                      icon: Icon(
+                        Icons.sort,
+                        color: Theme.of(context).colorScheme.tertiary,
+                      ))
                 ],
               ),
-
-              SizedBox(
-                height: 30,
-              ),
-
-              //title
-              Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "Breaking News",
-                    style: Fontstyles.Headline1(context),
-                  )),
-              
-              //news list view
-              NewsListBuilder(),
-            ],
-          )),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

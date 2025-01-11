@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pulse/features/home/presentation/pages/home.dart';
+import 'package:pulse/features/authentication/db/auth_gate.dart';
 
 class SplashScreenProvider with ChangeNotifier {
   Future<void> goHome(BuildContext context) async {
@@ -8,7 +8,7 @@ class SplashScreenProvider with ChangeNotifier {
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => HomeScreen(),
+          builder: (context) => AuthGate(),
         ));
   }
 }
