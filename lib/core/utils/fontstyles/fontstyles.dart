@@ -62,6 +62,24 @@ class Fontstyles {
     );
   }
 
+  static TextStyle Headline3(BuildContext context) {
+    return TextStyle(
+      fontFamily: 'Merriweather Sans',
+      fontSize: 16,
+      color: Theme.of(context).colorScheme.inversePrimary,
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle BodyTextStyle0(BuildContext context) {
+    return TextStyle(
+      fontFamily: 'Merriweather Sans',
+      fontSize: 13,
+      color: Theme.of(context).colorScheme.inversePrimary,
+      fontWeight: FontWeight.w600,
+    );
+  }
+
   static TextStyle BodyTextStyle1(BuildContext context) {
     return TextStyle(
       fontFamily: 'Merriweather Sans',

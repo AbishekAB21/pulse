@@ -29,7 +29,7 @@ class LoginScreen extends StatelessWidget {
 
         // Authentication section
         Positioned(
-            bottom: 10,
+            bottom: 30,
             left: 10,
             right: 10,
             child: AuthBox(

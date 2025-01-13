@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pulse/core/utils/theme/dark-theme.dart';
 import 'package:pulse/features/authentication/provider/authentication_provider.dart';
+import 'package:pulse/features/home/provider/home_screen_provider.dart';
 import 'package:pulse/features/splash/presentation/pages/splash-screen.dart';
 import 'package:pulse/features/splash/provider/splash-screen-provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -20,6 +21,9 @@ void main() async {
       ),
       ChangeNotifierProvider(
         create: (context) => AuthProvider(),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => HomeScreenProvider(),
       )
     ],
     child: const MyApp(),
