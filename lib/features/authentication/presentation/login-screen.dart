@@ -1,5 +1,6 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
-import 'package:pulse/core/utils/fontstyles/fontstyles.dart';
 import 'package:pulse/features/authentication/presentation/sign-up.dart';
 import 'package:pulse/features/authentication/widgets/auth-box.dart';
 

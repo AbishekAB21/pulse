@@ -33,6 +33,17 @@ class Fontstyles {
     );
   }
 
+  static TextStyle ButtonTextStyle2(BuildContext context, bool isDifColor) {
+    return TextStyle(
+      fontFamily: 'Merriweather Sans',
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      color: isDifColor
+          ? Theme.of(context).colorScheme.inversePrimary
+          : Theme.of(context).colorScheme.primary,
+    );
+  }
+
 // SnackBar Text
   static TextStyle SnackBarTextStyle(BuildContext context) {
     return TextStyle(

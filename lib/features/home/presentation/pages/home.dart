@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pulse/core/utils/fontstyles/fontstyles.dart';
+import 'package:pulse/features/home/presentation/widgets/bottom_bar.dart';
+import 'package:pulse/features/home/presentation/widgets/drawrer_widget.dart';
 import 'package:pulse/features/home/presentation/widgets/filter_section.dart';
 import 'package:pulse/features/home/presentation/widgets/news_list_builder.dart';
 import 'package:pulse/features/home/presentation/widgets/profile_button.dart';
@@ -16,8 +18,8 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
+      drawer: DrawrerWidget(),
       appBar: AppBar(
-        leading: DrawerButton(/* Drawrer refraction */),
         backgroundColor: Theme.of(context).colorScheme.surface,
         actions: [
           SearchButton(),

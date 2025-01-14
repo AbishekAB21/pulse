@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pulse/core/reusable_widgets/snackbar.dart';
 import 'package:pulse/features/authentication/db/auth_service.dart';
 import 'package:pulse/features/authentication/presentation/login-screen.dart';
-import 'package:pulse/features/home/presentation/pages/home.dart';
+import 'package:pulse/features/home/presentation/widgets/bottom_bar.dart';
 
 class AuthProvider extends ChangeNotifier {
   final authService = AuthService();
@@ -15,10 +15,11 @@ class AuthProvider extends ChangeNotifier {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => HomeScreen(),
+            builder: (context) => BottomBar(),
           ));
       // SnackBar
-      ShowSnackbar().showSnackBar("Logged in successfully!", Colors.green, context);
+      ShowSnackbar()
+          .showSnackBar("Logged in successfully!", Colors.green, context);
     } catch (e) {
       // Snackbar
       ShowSnackbar()
@@ -51,8 +52,8 @@ class AuthProvider extends ChangeNotifier {
           MaterialPageRoute(
             builder: (context) => LoginScreen(),
           ));
-       ShowSnackbar()
-          .showSnackBar("Logged out successfully!", Colors.grey.shade600, context);
+      ShowSnackbar().showSnackBar(
+          "Logged out successfully!", Colors.grey.shade600, context);
     } catch (e) {}
   }
 }

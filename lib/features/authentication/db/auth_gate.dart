@@ -7,6 +7,7 @@ Auth Gate - will continuously listen to auth state changes
 import 'package:flutter/material.dart';
 import 'package:pulse/features/authentication/presentation/login-screen.dart';
 import 'package:pulse/features/home/presentation/pages/home.dart';
+import 'package:pulse/features/home/presentation/widgets/bottom_bar.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class AuthGate extends StatelessWidget {
@@ -32,7 +33,7 @@ class AuthGate extends StatelessWidget {
         final session = snapshot.hasData ? snapshot.data!.session : null;
 
         if (session != null) {
-          return HomeScreen();
+          return BottomBar();
         } else {
           return LoginScreen();
         }
