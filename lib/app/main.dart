@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pulse/core/utils/theme/dark-theme.dart';
+import 'package:pulse/features/article/provider/article_provider.dart';
 import 'package:pulse/features/authentication/provider/authentication_provider.dart';
 import 'package:pulse/features/bottom%20bar/provider/bottombar_provider.dart';
 import 'package:pulse/features/home/provider/home_screen_provider.dart';
@@ -28,7 +29,10 @@ void main() async {
       ),
       ChangeNotifierProvider(
         create: (context) => BottomBarProvider(),
-      )
+      ),
+      ChangeNotifierProvider(
+        create: (context) => ArticleProvider(),
+      ),
     ],
     child: const MyApp(),
   ));

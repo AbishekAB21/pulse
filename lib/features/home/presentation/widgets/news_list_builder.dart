@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pulse/core/utils/fontstyles/fontstyles.dart';
+import 'package:pulse/features/article/presentation/pages/article_screen.dart';
 
 class NewsListBuilder extends StatelessWidget {
   const NewsListBuilder({super.key});
@@ -11,7 +12,11 @@ class NewsListBuilder extends StatelessWidget {
       overlayColor: WidgetStatePropertyAll(
         Theme.of(context).colorScheme.tertiary,
       ),
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => ArticleScreen(),
+        ));
+      },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
