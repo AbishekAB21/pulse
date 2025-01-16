@@ -9,7 +9,7 @@ class ArticleProvider with ChangeNotifier{
   bool get istapped => _istapped;
 
   changeColoronTap(){
-    _istapped = istapped;
+    _istapped = !_istapped;
     notifyListeners();
   }
 }

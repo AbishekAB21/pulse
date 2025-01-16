@@ -24,7 +24,7 @@ class MoreButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(30)),
           child: IconButton(
               onPressed: () {
-                articleProvider.istapped;
+                articleProvider.changeColoronTap();
               },
               icon: Icon(
                 Icons.bookmark,
